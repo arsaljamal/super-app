@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package service.v1;
+
+import "service/v1/user_profile.proto";
+
+option go_package = "service.v1";
+
+service UserProfileService {
+  rpc CreateUserProfile(CreateUserProfileRequest) returns (CreateUserProfileResponse) {}
+}
+
+message CreateUserProfileRequest {
+  service.v1.UserProfile user_profile = 1;
+}
+
+message CreateUserProfileResponse {
+  string response_message = 1;
+}
