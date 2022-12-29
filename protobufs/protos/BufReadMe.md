@@ -13,8 +13,8 @@ Once you have protoc installed, you can install `buf` using go `install`:
 ```
 
 Available Commands:
-check       checks for any issues with the input files
-diff        diffs the input files
+breaking    checks for any issues with the input files
+format      formats the input files
 generate    generates code for the input files
 lint        lints the input files
 version     prints the version
