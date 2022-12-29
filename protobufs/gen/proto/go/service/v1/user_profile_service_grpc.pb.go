@@ -4,7 +4,7 @@
 // - protoc             v3.21.12
 // source: service/v1/user_profile_service.proto
 
-package service_v1
+package v1
 
 import (
 	context "context"

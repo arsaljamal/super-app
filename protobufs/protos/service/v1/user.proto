@@ -4,9 +4,9 @@ package service.v1;
 
 import "google/protobuf/timestamp.proto";
 
-option go_package = "service.v1";
+option go_package = "github.com/super-app/protobufs/protos/service/v1";
 
-message UserProfile {
+message User {
   string name = 1;
   int32 age = 2;
   google.protobuf.Timestamp birthday = 3;

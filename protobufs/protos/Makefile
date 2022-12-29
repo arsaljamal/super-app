@@ -8,7 +8,7 @@ GEN_DIR = gen
 LANGUAGES = go
 
 # Default target
-all: lint format generate
+all: lint format clean generate
 
 #update:
 #	buf mod update
@@ -32,7 +32,7 @@ generate:
 
 # Check for breaking changes
 breaking:
-	buf breaking --against "https://github.com/arsaljamal/super-app.git#branch=main"
+	buf breaking --exclude-imports --against-config buf.yaml --against "https://github.com/arsaljamal/super-app.git#branch=main"
 
 # Check all targets
 check: lint format breaking

@@ -2,18 +2,24 @@ syntax = "proto3";
 
 package service.v1;
 
-import "service/v1/user_profile.proto";
+import "google/protobuf/timestamp.proto";
 
-option go_package = "service.v1";
+option go_package = "github.com/super-app/protobufs/protos/service/v1";
 
 service UserProfileService {
   rpc CreateUserProfile(CreateUserProfileRequest) returns (CreateUserProfileResponse) {}
 }
 
 message CreateUserProfileRequest {
-  service.v1.UserProfile user_profile = 1;
+  UserProfile user_profile = 1;
 }
 
 message CreateUserProfileResponse {
   string response_message = 1;
+}
+
+message UserProfile {
+  string name = 1;
+  int32 age = 2;
+  google.protobuf.Timestamp birthday = 3;
 }
