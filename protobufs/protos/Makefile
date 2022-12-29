@@ -5,7 +5,7 @@ PROTO_DIR = protos
 GEN_DIR = gen
 
 # List of languages to generate code for
-LANGUAGES = go
+LANGUAGES = go dart
 
 # Default target
 all: lint format clean generate
@@ -27,6 +27,9 @@ generate:
 		if [ $$i == "go" ]; then \
 		  	 mkdir -p ../gen/proto/go; \
 			 find . -name '*.proto' -exec protoc --go_out=../gen/proto/go --go_opt=paths=source_relative --go-grpc_out=../gen/proto/go --go-grpc_opt=paths=source_relative {} +; \
+		elif [ $$i == "dart" ]; then \
+			 mkdir -p ../gen/proto/dart; \
+			 find . -name '*.proto' -exec protoc --dart_out=grpc:../gen/proto/dart {} +; \
 		fi \
     done
 
