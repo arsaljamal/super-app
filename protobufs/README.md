@@ -12,9 +12,9 @@ Protocol Buffers (protobufs) are a language- and platform-neutral data serializa
 
 `Type safety:` Protobufs provide a way to define the structure and types of data being exchanged, which can help ensure that the client and server are in agreement about the data being exchanged. This can help prevent issues with contract testing, as it allows you to catch errors early on in the development process.
 
+`Communication`: Can be used for inter-process communication between micro-services and front-end apps using Grpc/Rest. As well as for event streaming platforms like Kafka
+
 Overall, Protobufs can be a useful tool for contract testing, particularly when you need to exchange large amounts of data efficiently and maintain backward compatibility over time.
-
-
 
 
 ## Using Protocol Buffers

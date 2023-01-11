@@ -39,10 +39,6 @@ generate:
                 			 mkdir -p ../gen/proto/java; \
                 			 find . -name '*.proto' -exec protoc --plugin=protoc-gen-grpc-java=protoc-gen-grpc-java-1.51.1-osx-aarch_64.exe \
                 			  				          --java_out=../gen/proto/java --grpc-java_out=../gen/proto/java {} +; \
-		elif [ $$i == "java" ]; then \
-                        			 mkdir -p ../gen/proto/java; \
-                        			 find . -name '*.proto' -exec protoc --plugin=protoc-gen-grpc-java=protoc-gen-grpc-java-1.51.1-osx-aarch_64.exe \
-                        			  				          --java_out=../gen/proto/java --grpc-java_out=../gen/proto/java {} +; \
 		elif [ $$i == "web" ]; then \
                         			 mkdir -p ../gen/proto/web; \
                         			 find . -name '*.proto' -exec protoc --plugin=protoc-gen-grpc-web=protoc-gen-grpc-web-1.4.2-darwin-aarch64 \
