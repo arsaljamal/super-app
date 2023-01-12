@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package service.v1;
+
+option go_package = "github.com/super-app/protobufs/protos/service/v1";
+
+
+service AuthenticationService {
+  rpc Login (LoginRequest) returns (LoginResponse);
+  rpc Logout (LogoutRequest) returns (LogoutResponse);
+  rpc Status (SessionRequest) returns (SessionResponse);
+}
+
+message LoginRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+  string jwt = 1;
+}
+
+message LogoutRequest {
+  string jwt = 1;
+}
+
+message LogoutResponse {
+  bool success = 1;
+}
+
+message SessionRequest {
+  string jwt = 1;
+}
+
+message SessionResponse {
+  bool valid = 1;
+  string username = 2;
+}
