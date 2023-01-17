@@ -2994,9 +2994,9 @@ public final class Address {
       "number\030\001 \001(\t\022*\n\004type\030\002 \001(\0162\034.service.v1." +
       "Person.PhoneType\"+\n\tPhoneType\022\n\n\006MOBILE\020" +
       "\000\022\010\n\004HOME\020\001\022\010\n\004WORK\020\002\"1\n\013AddressBook\022\"\n\006" +
-      "people\030\001 \003(\0132\022.service.v1.PersonB2Z0gith" +
-      "ub.com/super-app/protobufs/protos/servic" +
-      "e/v1b\006proto3"
+      "people\030\001 \003(\0132\022.service.v1.PersonB\'Z%supe" +
+      "r-app/protobufs/protos/service/v1b\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
