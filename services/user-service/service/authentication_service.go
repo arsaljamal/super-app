@@ -15,6 +15,9 @@ type AuthenticationService interface {
 // AuthenticationServiceImpl Define a struct for the service implementation
 type AuthenticationServiceImpl struct {
 	// ... any additional fields you need for your implementation
+
+	// UnimplementedAuthenticationServiceServer must be embedded to have forward compatible implementations.
+	pb.UnimplementedAuthenticationServiceServer
 }
 
 // NewAuthenticationServiceInstance Create a new instance method for creating service instances
