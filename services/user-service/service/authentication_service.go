@@ -2,7 +2,7 @@ package service
 
 import (
 	"context"
-	pb "super-app/services/user-service/service/protobufs/service/v1"
+	pb "github.com/arsaljamal/super-app/protobufs/services/user-service/api/v1"
 )
 
 // AuthenticationService Define an interface for the service

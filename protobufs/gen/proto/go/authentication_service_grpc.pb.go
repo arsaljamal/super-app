@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.12
-// source: service/v1/authentication.proto
+// source: authentication_service.proto
 
 package v1
 
@@ -37,7 +37,7 @@ func NewAuthenticationServiceClient(cc grpc.ClientConnInterface) AuthenticationS
 
 func (c *authenticationServiceClient) Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginResponse, error) {
 	out := new(LoginResponse)
-	err := c.cc.Invoke(ctx, "/service.v1.AuthenticationService/Login", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/AuthenticationService/Login", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -46,7 +46,7 @@ func (c *authenticationServiceClient) Login(ctx context.Context, in *LoginReques
 
 func (c *authenticationServiceClient) Logout(ctx context.Context, in *LogoutRequest, opts ...grpc.CallOption) (*LogoutResponse, error) {
 	out := new(LogoutResponse)
-	err := c.cc.Invoke(ctx, "/service.v1.AuthenticationService/Logout", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/AuthenticationService/Logout", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -55,7 +55,7 @@ func (c *authenticationServiceClient) Logout(ctx context.Context, in *LogoutRequ
 
 func (c *authenticationServiceClient) Status(ctx context.Context, in *SessionRequest, opts ...grpc.CallOption) (*SessionResponse, error) {
 	out := new(SessionResponse)
-	err := c.cc.Invoke(ctx, "/service.v1.AuthenticationService/Status", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/AuthenticationService/Status", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -108,7 +108,7 @@ func _AuthenticationService_Login_Handler(srv interface{}, ctx context.Context, 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/service.v1.AuthenticationService/Login",
+		FullMethod: "/AuthenticationService/Login",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AuthenticationServiceServer).Login(ctx, req.(*LoginRequest))
@@ -126,7 +126,7 @@ func _AuthenticationService_Logout_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/service.v1.AuthenticationService/Logout",
+		FullMethod: "/AuthenticationService/Logout",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AuthenticationServiceServer).Logout(ctx, req.(*LogoutRequest))
@@ -144,7 +144,7 @@ func _AuthenticationService_Status_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/service.v1.AuthenticationService/Status",
+		FullMethod: "/AuthenticationService/Status",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AuthenticationServiceServer).Status(ctx, req.(*SessionRequest))
@@ -156,7 +156,7 @@ func _AuthenticationService_Status_Handler(srv interface{}, ctx context.Context,
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AuthenticationService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "service.v1.AuthenticationService",
+	ServiceName: "AuthenticationService",
 	HandlerType: (*AuthenticationServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -173,5 +173,5 @@ var AuthenticationService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "service/v1/authentication.proto",
+	Metadata: "authentication_service.proto",
 }
